@@ -1,18 +1,14 @@
 import React, { useEffect } from 'react';
 import {
     SafeAreaView,
-    Text,
     ActivityIndicator
 } from 'react-native';
-import { useAuth } from '../../context/Auth'
-import { ACCESS_TOKEN } from '../../constant'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const AuthCheck = ({ navigation }) => {
     console.log(navigation)
     useEffect(() => {
         getAccessToken()
-
     }, [])
     const getAccessToken = async () => {
         try {
@@ -27,7 +23,6 @@ const AuthCheck = ({ navigation }) => {
         } catch (e) {
             console.log(e)
             navigation.navigate('Login')
-            // error reading value
         }
     };
     return (

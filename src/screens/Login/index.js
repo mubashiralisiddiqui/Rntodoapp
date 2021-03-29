@@ -4,9 +4,8 @@ import { validations } from './schema'
 import { Formik } from 'formik';
 import { Text, Input, Button } from 'react-native-elements'
 import { useAuth } from '../../context/Auth'
-import { browserDetect } from '../../utils/helper'
 import styles from './style'
-import { getUniqueId, getManufacturer } from 'react-native-device-info';
+import { getManufacturer } from 'react-native-device-info';
 
 export default function Login({ navigation }) {
     const [manufacture, setManufacturer] = useState('')

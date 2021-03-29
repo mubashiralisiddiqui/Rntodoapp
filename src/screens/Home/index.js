@@ -48,10 +48,7 @@ const Home = ({ navigation }) => {
                 taskLoading={taskLoading}
                 handleUpdate={handleUpdate}
                 handleDelete={handleDelete}
-
             />
-
-
         </SafeAreaView>
     );
 };

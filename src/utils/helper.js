@@ -1,23 +1,15 @@
 
 
 export const setItem = (key, value) => {
-    // localStorage.setItem(key, value);
 };
 
 export const getItem = (key) => {
-    // const item = localStorage.getItem(key);
-    // if (item) {
-    //     return JSON.parse(item);
-    // }
-    // return null;
 };
 
 export const removeItem = (key) => {
-    // localStorage.removeItem(key);
 };
 
 export const clearStorage = () => {
-    // localStorage.clear();
 };
 
 export const browserDetect = (function () {

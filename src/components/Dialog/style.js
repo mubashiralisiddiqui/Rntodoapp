@@ -48,6 +48,11 @@ const styles = StyleSheet.create({
     },
     button: {
 
+    },
+    overlayStyle: {
+        borderRadius: 10,
+        height: 300,
+        width: '90%'
     }
 
 })

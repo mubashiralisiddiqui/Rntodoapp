@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from 'react-native-elements'
 import styles from './style'
 
+// custom Resusable App Theme button
 const CustomButton = ({ title, onPress = () => { }, disabled = false, loading = false }) => {
     return (
         <Button

@@ -6,6 +6,4 @@ export const validations = Yup.object({
         .required(),
     description: Yup.string()
         .required(),
-    // dueDate: Yup.string()
-    //     .required(),
 })

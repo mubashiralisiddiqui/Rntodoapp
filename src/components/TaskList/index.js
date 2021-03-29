@@ -1,10 +1,6 @@
-import { ListItem, Avatar, CheckBox, Text, Button, Icon, Keyboard } from 'react-native-elements'
-import React, { useState, useRef } from 'react';
+import { ListItem, CheckBox, Text, } from 'react-native-elements'
+import React, { useRef } from 'react';
 import {
-    Animated,
-    Dimensions,
-    StyleSheet,
-    // Text,
     ActivityIndicator,
     View,
     TouchableWithoutFeedback,
@@ -12,15 +8,13 @@ import {
     FlatList
 } from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons'
-import { SwipeListView, SwipeRow } from 'react-native-swipe-list-view';
+import { SwipeRow } from 'react-native-swipe-list-view';
+import moment from 'moment'
 import styles from './style'
 
 
-
-const TaskList = ({ taskLoading, tasks, loading, title, handleUpdate, handleDelete }) => {
-    console.log('tasks', loading)
+const TaskList = ({ tasks, loading, title, handleUpdate, handleDelete }) => {
     const animationIsRunning = useRef(false);
-
     const renderItem = ({ item }) => {
         return (
             <SwipeRow
@@ -58,8 +52,7 @@ const TaskList = ({ taskLoading, tasks, loading, title, handleUpdate, handleDele
                                         style={{ marginRight: 10 }}
                                     />
                                     <Text style={{ paddingLeft: 30, }}>
-                                        &nbsp; {new Date(item.due_at).toDateString()}
-
+                                        &nbsp; {moment(item.due_at).format('YYYY-MM-DD HH:MM')}
                                     </Text>
 
                                 </ListItem.Subtitle>
@@ -74,7 +67,6 @@ const TaskList = ({ taskLoading, tasks, loading, title, handleUpdate, handleDele
 
     return (
         <View style={styles.container}>
-
             {
                 loading ?
                     <ActivityIndicator size="large" color="#000000"
@@ -96,9 +88,6 @@ const TaskList = ({ taskLoading, tasks, loading, title, handleUpdate, handleDele
                             keyExtractor={item => item.id}
                             data={tasks}
                             renderItem={renderItem}
-                        // ref={ref => flatList = ref}
-                        // onContentSizeChange={() => flatList.scrollToEnd({ animated: true })}
-                        // onLayout={() => flatList.scrollToEnd({ animated: true })}
                         />
                     </>
             }

@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { setItem, getItem } from "../../utils/helper";
-import { USER_KEY } from '../../constant'
 import { addLocation, getLocation, deleteLocation } from '../../api/location'
 
 export const LocationContext = React.createContext(null);
